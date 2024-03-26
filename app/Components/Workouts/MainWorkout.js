@@ -18,12 +18,12 @@ const MainWorkout = ({ setSelectedExercise,data }) => {
             }
           
           >
-            console.log(exercise.name)
+           
             <img src={exercise.imageSrc} alt="image" />
             <div className={styles.DetailsRepCont}>
               <span className={styles.exerciceNumb}>{exercise.name}</span>
               <p className={styles.workoutsInfo}>
-                <span>10 Reps, </span> <span> 3 Sets</span>
+                <span>{exercise.reps}</span> <span> {exercise.reps}</span>
               </p>
               <button className={styles.button}>Check</button>
             </div>

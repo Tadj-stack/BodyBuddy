@@ -18,22 +18,29 @@ export const WorkoutSchedule = () => {
     if (workoutsdata.length === 0) {
       return <div>Loading...</div>;
     }
-    const exercises = workoutsdata;
+  
   let data = [];
   workoutsdata.forEach(element => {
     data.push({
       id:element._id,
       name:element.name,
       imageSrc:element.image,
+      workoutImages:element.workoutImages,
+      reps:element.reps,
+      sets:element.sets,
+      targets:element.targets,
+      level:element.level,
+      description:element.description,
     })
   });
+  const exercises = workoutsdata;
 console.log(data)
   return (
     <div>
       <div className={styles.MainWorkoutSheduel}>
         {!selectedExercise && (
           <MainWorkout setSelectedExercise={setSelectedExercise}
-          data={workoutsdata} />
+          data={data} />
         )}
 
         {/* Map pour chauqe element de la table */}
@@ -42,8 +49,14 @@ console.log(data)
             selectedExercise === exercise.name && (
               <StandardExercises
                 key={exercise.id}
-                imageSrc={exercise.imageSrc}
+                workoutImages={exercise.workoutImages}
                 workoutAdvice={exercise.workoutAdvice}
+                reps={exercise.reps}
+                sets={exercise.sets}
+                name={exercise.name}
+                targets={exercise.targets}
+                level={exercise.level}
+                description={exercise.description}
               />
             )
         )}

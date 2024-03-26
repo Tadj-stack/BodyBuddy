@@ -13,7 +13,7 @@ const MainMeals = ({ setSelectedMeal ,data}) => {
         {Meals.map((Meal, index) => (
           <div key={index} className={styles.repCont}>
             <img
-              src={Meal.imageSrc}
+              src={Meal.image}
               alt="image"
               onClick={() => setSelectedMeal(Meal.name)}
             />
